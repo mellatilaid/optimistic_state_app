@@ -1,16 +1,48 @@
-# optimistic_state_app
+# Gemini Project Context: optimistic_state_app
 
-A new Flutter project.
+## Project Overview
 
-## Getting Started
+This is a Flutter project that demonstrates the "Optimistic UI" pattern. The core feature is a `SubscribeButton` that immediately updates its state to "Subscribed" upon being tapped, without waiting for confirmation from a simulated network request. If the request fails, the UI reverts to its original state and displays an error message.
 
-This project is a starting point for a Flutter application.
+The project is structured with a clear separation of concerns:
 
-A few resources to get you started if this is your first Flutter project:
+*   **Widget (`SubscribeButton`):** The UI component.
+*   **ViewModel (`SubscribeButtonViewModel`):** Manages the state and business logic for the widget using `ChangeNotifier`.
+*   **Repository (`SubscriptionRepository`):** Simulates the data layer, in this case, a network request that always fails after a delay.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+The main technologies used are Flutter and Dart.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Building and Running
+
+### 1. Get Dependencies
+
+First, ensure all project dependencies are downloaded and up-to-date.
+
+```sh
+flutter pub get
+```
+
+### 2. Run the Application
+
+Run the app on a connected device or simulator.
+
+```sh
+flutter run
+```
+
+### 3. Run Tests
+
+Execute the widget tests to ensure the UI behaves as expected.
+
+```sh
+flutter test
+```
+
+## Development Conventions
+
+*   **State Management:** The project uses `ChangeNotifier` and `ListenableBuilder` for simple, local state management. This is a lightweight approach suitable for the current scale.
+*   **Architecture:** The code follows a basic MVVM (Model-View-ViewModel) pattern, with the `SubscribeButtonViewModel` acting as the ViewModel.
+*   **Styling:** Widget styles are encapsulated in a separate utility class (`SubscribeButtonStyle`) to keep the widget build methods clean.
+*   **Linting:** The project uses the recommended lints from the `flutter_lints` package to enforce good coding practices. The configuration is in `analysis_options.yaml`.
+*   **Testing:** The project includes a basic widget test in `test/widget_test.dart` that verifies the default counter functionality.
+
