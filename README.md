@@ -3,7 +3,7 @@ Optimistic UI Demonstration in Flutter
   This repository contains a simple Flutter application built to demonstrate the "Optimistic UI" pattern. The example features a 'Subscribe' button that provides immediate
   feedback to the user, creating a more responsive and seamless user experience, even when the underlying network request fails.
 
-    <!-- You can replace this with your own GIF -->
+  
 
   What is Optimistic UI?
 
@@ -49,29 +49,6 @@ Optimistic UI Demonstration in Flutter
    20     notifyListeners();
    21   }
    22 }
-
-  Getting Started
-
-  To run this project locally, follow these steps:
-
-  1. Prerequisites
-
-  Ensure you have the Flutter SDK (https://flutter.dev/docs/get-started/install) installed on your machine.
-
-  2. Clone the Repository
-
-   1 git clone https://github.com/your-username/optimistic_state_app.git
-   2 cd optimistic_state_app
-
-  3. Install Dependencies
-
-   1 flutter pub get
-
-  4. Run the Application
-
-   1 flutter run
-
-  Project Structure
 
    - lib/main.dart: The entry point of the application, which sets up the main screen.
    - lib/subscribe_button.dart: Contains the core logic and widgets for this demonstration:
